@@ -1,0 +1,29 @@
+.month-name {
+	font-weight: bold;
+}
+
+.calendar-month {
+	border-spacing: 2px;
+	border-collapse: separate;
+}
+
+.calendar-month td {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+}
+
+td.weekend {
+	background-color: #DEDEDE;
+}
+
+td.invis {
+	color: white;
+	border-width: 0px;
+}
+
+td.today {
+	background-color: #FF9999;
+	border-color: #990000;
+}

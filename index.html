@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="calendarApp">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/calendar.css" />
+    <script type="text/javascript" src="./js/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="CalendarController as calendar">
+    <!--  Calendar Header  -->
+    <header>
+      <h1 class="text-center">Calendar Test</h1>
+    </header>
+
+
+    <!-- Calendar Navigation  -->
+    <section class="container main-body">
+      <div class="btn-group" role="group" aria-label="..." ng-cloak>
+        <button type="button" class="btn btn-default" ng-class="{'btn-primary' : calendar.canLeft()}" ng-click="calendar.prevMonth()">&lt;</button>
+        <button type="button" class="btn btn-default month-name" style="width: 160px;">{{calendar.currentMonth.name}}</button>
+        <button type="button" class="btn btn-default" ng-class="{'btn-primary' : calendar.canRight()}" ng-click="calendar.nextMonth()">&gt;</button>
+      </div>
+
+      <!-- Calendar Container  -->
+      <table class="calendar-month" ng-cloak><tbody>
+        <tr ng-repeat="week in calendar.currentMonth.dates">
+          <td ng-repeat="day in week track by $index" ng-class="day.class">{{day.date}}</td>
+        </tr>
+      </tbody></table>
+    </section>
+
+  </body>
+</html>
